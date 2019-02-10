@@ -96,9 +96,89 @@ shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="RigidBody" type="RigidBody" parent="." index="2" instance=ExtResource( 2 )]
+[node name="StaticBody2" type="StaticBody" parent="Environment" index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0930063, 0.0344002, -1.13138 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5733, 0, 29.1223 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/StaticBody2" index="0"]
+
+transform = Transform( 18, 0, 0, 0, 5, 0, 0, 0, 18, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody4" type="StaticBody" parent="Environment" index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7216, 0, -33.1775 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/StaticBody4" index="0"]
+
+transform = Transform( 18, 0, 0, 0, 5, 0, 0, 0, 18, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody5" type="StaticBody" parent="Environment" index="3"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3198, 0, -33.1775 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/StaticBody5" index="0"]
+
+transform = Transform( 18, 0, 0, 0, 5, 0, 0, 0, 18, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="StaticBody3" type="StaticBody" parent="Environment" index="4"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8738, 0, 29.291 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/StaticBody3" index="0"]
+
+transform = Transform( 18, 0, 0, 0, 5, 0, 0, 0, 18, 0, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" type="RigidBody" parent="." index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90797, 4.4863, -12.4088 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -128,7 +208,7 @@ script = ExtResource( 3 )
 speed = 10.0
 sensitivity = 10.0
 
-[node name="Camera" type="Camera" parent="RigidBody" index="3"]
+[node name="Camera" type="Camera" parent="Player" index="3"]
 
 transform = Transform( -0.5, 0, -1.62921e-07, 0, 0.5, 0, 1.62921e-07, 0, -0.5, 0, 1.74538, -1.92542 )
 keep_aspect = 1

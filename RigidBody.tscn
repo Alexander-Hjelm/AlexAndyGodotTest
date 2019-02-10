@@ -122,7 +122,6 @@ sensitivity = 10.0
 
 [node name="Skeleton" type="Skeleton" parent="." index="0"]
 
-editor/display_folded = true
 transform = Transform( 0.730829, 0.0563105, -0.680234, 0.00050642, 0.996546, 0.0830393, 0.68256, -0.0610321, 0.728276, -0.0553115, -0.0684765, 0.0592741 )
 bones/0/name = "Root"
 bones/0/parent = -1
