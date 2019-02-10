@@ -89,7 +89,7 @@ surfaces/0 = {
 radius = 1.0
 height = 1.0
 
-[node name="Scene Root" type="Spatial"]
+[node name="Scene Root" type="Spatial" index="0"]
 
 [node name="RigidBody" type="RigidBody" parent="." index="0"]
 
@@ -452,7 +452,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="RigidBody" index="1"]
 
-transform = Transform( 0.4, -5.68434e-15, -3.68609e-11, -2.94887e-11, -0.000195295, -0.5, -5.68434e-15, 0.4, -0.000244119, 0, 0.767139, 0 )
+transform = Transform( 0.4, -1.13687e-14, -6.32099e-11, -3.612e-11, -0.000239212, -0.7, -1.13687e-14, 0.4, -0.00041862, 0, 0.767139, 0 )
 shape = SubResource( 5 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
