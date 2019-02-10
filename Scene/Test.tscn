@@ -207,7 +207,7 @@ angular_damp = -1.0
 script = ExtResource( 3 )
 _sections_unfolded = [ "Angular", "Linear" ]
 speed = 7.5
-sensitivity = 10.0
+sensitivity = 1.0
 
 [node name="Camera" type="Camera" parent="Player" index="3"]
 

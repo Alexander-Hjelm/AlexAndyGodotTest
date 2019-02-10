@@ -18,6 +18,7 @@ func _ready():
 	lastMousePos = get_viewport().get_mouse_position()
 	camera = get_child(0)
 	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _process(delta):
 	
