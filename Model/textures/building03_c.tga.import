@@ -2,13 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/building03_c.tga-dd1a13d02d1ac841018e35bbb7794c62.s3tc.stex"
-path.etc2="res://.import/building03_c.tga-dd1a13d02d1ac841018e35bbb7794c62.etc2.stex"
+path.s3tc="res://.import/building03_c.tga-ce793bfac42570914c8891b0dcc5b5ab.s3tc.stex"
+path.etc2="res://.import/building03_c.tga-ce793bfac42570914c8891b0dcc5b5ab.etc2.stex"
 
 [deps]
 
-source_file="res://model/textures/building03_c.tga"
-dest_files=[ "res://.import/building03_c.tga-dd1a13d02d1ac841018e35bbb7794c62.s3tc.stex", "res://.import/building03_c.tga-dd1a13d02d1ac841018e35bbb7794c62.etc2.stex" ]
+source_file="res://Model/textures/building03_c.tga"
+dest_files=[ "res://.import/building03_c.tga-ce793bfac42570914c8891b0dcc5b5ab.s3tc.stex", "res://.import/building03_c.tga-ce793bfac42570914c8891b0dcc5b5ab.etc2.stex" ]
 
 [params]
 
