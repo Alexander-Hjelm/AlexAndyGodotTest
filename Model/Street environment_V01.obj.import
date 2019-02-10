@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/Street environment_V01.obj-e3065773adfbdd5fa639f6f9408ee86b.mesh"
+path="res://.import/Street environment_V01.obj-bf496c52a758b56c4f22a68b4fdda353.mesh"
 
 [deps]
 
-files=[ "res://.import/Street environment_V01.obj-e3065773adfbdd5fa639f6f9408ee86b.mesh" ]
+files=[ "res://.import/Street environment_V01.obj-bf496c52a758b56c4f22a68b4fdda353.mesh" ]
 
-source_file="res://model/Street environment_V01.obj"
-dest_files=[ "res://.import/Street environment_V01.obj-e3065773adfbdd5fa639f6f9408ee86b.mesh", "res://.import/Street environment_V01.obj-e3065773adfbdd5fa639f6f9408ee86b.mesh" ]
+source_file="res://Model/Street environment_V01.obj"
+dest_files=[ "res://.import/Street environment_V01.obj-bf496c52a758b56c4f22a68b4fdda353.mesh", "res://.import/Street environment_V01.obj-bf496c52a758b56c4f22a68b4fdda353.mesh" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/building 06_ c.tga-d7a09f45f432ccd9beb6e5c624c2b563.stex"
+path="res://.import/building 06_ c.tga-a6a3d901af36d747436a45b663b0a0ef.stex"
 
 [deps]
 
-source_file="res://model/textures/building 06_ c.tga"
-dest_files=[ "res://.import/building 06_ c.tga-d7a09f45f432ccd9beb6e5c624c2b563.stex" ]
+source_file="res://Model/textures/building 06_ c.tga"
+dest_files=[ "res://.import/building 06_ c.tga-a6a3d901af36d747436a45b663b0a0ef.stex" ]
 
 [params]
 
