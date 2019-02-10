@@ -1,4 +1,4 @@
-extends Spatial
+extends RigidBody
 
 # class member variables go here, for example:
 # var a = 2
@@ -37,17 +37,29 @@ func _process(delta):
 
 	var AnimationState = "default"
 	
+	var vel = Vector3(0,0,0)
+	
 	# Charater movement
 	if Input.is_action_pressed("ui_up"):
-		transform.origin += forwardDir * delta * speed
+		vel += forwardDir
 		AnimationState = "Running"
 	if Input.is_action_pressed("ui_down"):
-		transform.origin -= forwardDir * delta * speed
+		vel -= forwardDir
 		AnimationState = "Running"
 	if Input.is_action_pressed("ui_left"):
-		transform.origin += rightDir * delta * speed
+		vel += rightDir
 	if Input.is_action_pressed("ui_right"):
-		transform.origin -= rightDir * delta * speed	
+		vel -= rightDir
+
+
+
+	vel = vel.normalized() * speed
+
+	vel.y = linear_velocity.y
+
+	print(vel.z)
+
+	set_linear_velocity(vel)
 
 	# Charater rotation
 	var currentMousePos = get_viewport().get_mouse_position()
