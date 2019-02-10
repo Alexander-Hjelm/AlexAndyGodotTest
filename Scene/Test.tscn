@@ -178,12 +178,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" type="RigidBody" parent="." index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90797, 4.4863, -12.4088 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90797, 0.434455, -22.6277 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-mode = 0
+mode = 2
 mass = 1.0
 friction = 1.0
 bounce = 0.0
@@ -201,11 +201,12 @@ axis_lock_angular_x = false
 axis_lock_angular_y = false
 axis_lock_angular_z = false
 linear_velocity = Vector3( 0, 0, 0 )
-linear_damp = -1.0
+linear_damp = 0.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
 script = ExtResource( 3 )
-speed = 10.0
+_sections_unfolded = [ "Angular", "Linear" ]
+speed = 7.5
 sensitivity = 10.0
 
 [node name="Camera" type="Camera" parent="Player" index="3"]
