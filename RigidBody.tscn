@@ -89,9 +89,7 @@ surfaces/0 = {
 radius = 1.0
 height = 1.0
 
-[node name="Scene Root" type="Spatial" index="0"]
-
-[node name="RigidBody" type="RigidBody" parent="." index="0"]
+[node name="RigidBody" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -119,10 +117,12 @@ linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
 script = ExtResource( 1 )
-speed = 1
+speed = 10.0
+sensitivity = 10.0
 
-[node name="Skeleton" type="Skeleton" parent="RigidBody" index="0"]
+[node name="Skeleton" type="Skeleton" parent="." index="0"]
 
+editor/display_folded = true
 transform = Transform( 0.730829, 0.0563105, -0.680234, 0.00050642, 0.996546, 0.0830393, 0.68256, -0.0610321, 0.728276, -0.0553115, -0.0684765, 0.0592741 )
 bones/0/name = "Root"
 bones/0/parent = -1
@@ -390,7 +390,7 @@ bones/52/rest = Transform( 0.999202, 0.0302729, -0.0260395, -0.0121862, 0.852176
 bones/52/enabled = true
 bones/52/bound_children = [  ]
 
-[node name="character_creation_testMesh" type="MeshInstance" parent="RigidBody/Skeleton" index="0"]
+[node name="character_creation_testMesh" type="MeshInstance" parent="Skeleton" index="0"]
 
 layers = 1
 material_override = null
@@ -405,7 +405,7 @@ mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="high-polyMesh" type="MeshInstance" parent="RigidBody/Skeleton" index="1"]
+[node name="high-polyMesh" type="MeshInstance" parent="Skeleton" index="1"]
 
 layers = 1
 material_override = null
@@ -420,7 +420,7 @@ mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="male_casualsuit06Mesh" type="MeshInstance" parent="RigidBody/Skeleton" index="2"]
+[node name="male_casualsuit06Mesh" type="MeshInstance" parent="Skeleton" index="2"]
 
 layers = 1
 material_override = null
@@ -435,7 +435,7 @@ mesh = SubResource( 3 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="male_casualsuit05Mesh" type="MeshInstance" parent="RigidBody/Skeleton" index="3"]
+[node name="male_casualsuit05Mesh" type="MeshInstance" parent="Skeleton" index="3"]
 
 layers = 1
 material_override = null
@@ -450,14 +450,14 @@ mesh = SubResource( 4 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="CollisionShape" type="CollisionShape" parent="RigidBody" index="1"]
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 0.4, -1.13687e-14, -6.32099e-11, -3.612e-11, -0.000239212, -0.7, -1.13687e-14, 0.4, -0.00041862, 0, 0.767139, 0 )
+transform = Transform( 0.4, -1.13687e-14, -4.515e-11, -3.612e-11, -0.000239212, -0.5, -1.13687e-14, 0.4, -0.000299015, 0, 0.767139, 0 )
 shape = SubResource( 5 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RigidBody" index="2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
 root_node = NodePath("../..")
 autoplay = ""

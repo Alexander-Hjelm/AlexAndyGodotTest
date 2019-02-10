@@ -1,17 +1,39 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Model/Street environment_V01.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://RigidBody.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/Character.gd" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Root Node" type="Node"]
+[node name="Root Node" type="Node" index="0"]
 
-[node name="Environment" type="MeshInstance" parent="." index="0"]
+[node name="OmniLight" type="OmniLight" parent="." index="0"]
 
-editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.51208, 3.10633 )
+layers = 1
+light_color = Color( 1, 1, 1, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 31.8314
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+
+[node name="Environment" type="MeshInstance" parent="." index="1"]
+
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -74,36 +96,41 @@ shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="OmniLight" type="OmniLight" parent="." index="1"]
+[node name="RigidBody" type="RigidBody" parent="." index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.51208, 3.10633 )
-layers = 1
-light_color = Color( 1, 1, 1, 1 )
-light_energy = 1.0
-light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-omni_range = 31.8314
-omni_attenuation = 1.0
-omni_shadow_mode = 1
-omni_shadow_detail = 1
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0930063, 0.0344002, -1.13138 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 3 )
+speed = 10.0
+sensitivity = 10.0
 
-[node name="Scene Root" parent="." index="2" instance=ExtResource( 2 )]
+[node name="Camera" type="Camera" parent="RigidBody" index="3"]
 
-transform = Transform( 1, 0, 0, 0, 1, -1.09278e-08, 0, 1.09278e-08, 1, 0, 0.945261, -0.682766 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Camera" type="Camera" parent="." index="3"]
-
-transform = Transform( -0.75, -8.5305e-15, -2.44381e-07, 3.56076e-15, 1, -4.58345e-08, 2.44381e-07, -1.52521e-08, -0.75, 0, 2.39667, -3.04972 )
+transform = Transform( -0.5, 0, -1.62921e-07, 0, 0.5, 0, 1.62921e-07, 0, -0.5, 0, 1.74538, -1.92542 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null
