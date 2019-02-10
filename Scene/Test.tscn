@@ -1,73 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://model/Street environment_V01.obj" type="ArrayMesh" id=1]
-[ext_resource path="res://material/house1material.tres" type="Material" id=2]
-[ext_resource path="res://script/Player.gd" type="Script" id=3]
+[ext_resource path="res://Model/Street environment_V01.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=2]
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="BoxShape" id=1]
 
-render_priority = 0
-flags_transparent = false
-flags_unshaded = false
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-_sections_unfolded = [ "Albedo" ]
-
-[sub_resource type="CapsuleMesh" id=2]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-radius = 1.0
-mid_height = 1.0
-radial_segments = 64
-rings = 8
+extents = Vector3( 1, 1, 1 )
 
 [node name="Root Node" type="Node" index="0"]
 
 [node name="Environment" type="MeshInstance" parent="." index="0"]
 
+editor/display_folded = true
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 layers = 1
 material_override = null
@@ -80,8 +24,8 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = ExtResource( 1 )
 skeleton = NodePath("..")
-material/0 = ExtResource( 2 )
-material/1 = SubResource( 1 )
+material/0 = null
+material/1 = null
 material/2 = null
 material/3 = null
 material/4 = null
@@ -112,6 +56,24 @@ material/28 = null
 material/29 = null
 _sections_unfolded = [ "Transform", "material" ]
 
+[node name="StaticBody" type="StaticBody" parent="Environment" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Environment/StaticBody" index="0"]
+
+transform = Transform( 48, 0, 0, 0, 1, 0, 0, 0, 47, 0, -0.913022, 0 )
+shape = SubResource( 1 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
 [node name="OmniLight" type="OmniLight" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.51208, 3.10633 )
@@ -134,28 +96,14 @@ omni_attenuation = 1.0
 omni_shadow_mode = 1
 omni_shadow_detail = 1
 
-[node name="Player" type="MeshInstance" parent="." index="2"]
+[node name="Scene Root" parent="." index="2" instance=ExtResource( 2 )]
 
-transform = Transform( 0.75, 0, 0, 0, -3.27835e-08, -1, 0, 0.75, -4.37114e-08, 0, 1.60923, -3.42413 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 2 )
-skeleton = NodePath("..")
-material/0 = null
-script = ExtResource( 3 )
-_sections_unfolded = [ "Pause", "Transform" ]
-speed = 10.0
+transform = Transform( 1, 0, 0, 0, 1, -1.09278e-08, 0, 1.09278e-08, 1, 0, 0.945261, -0.682766 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Camera" type="Camera" parent="Player" index="0"]
+[node name="Camera" type="Camera" parent="." index="3"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 9.11277, -2.16848 )
+transform = Transform( -0.75, -8.5305e-15, -2.44381e-07, 3.56076e-15, 1, -4.58345e-08, 2.44381e-07, -1.52521e-08, -0.75, 0, 2.39667, -3.04972 )
 keep_aspect = 1
 cull_mask = 1048575
 environment = null

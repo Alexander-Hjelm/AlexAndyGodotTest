@@ -11,7 +11,12 @@ config_version=3
 [application]
 
 config/name="AlexAndyTest"
+run/main_scene="res://Scene/Test.tscn"
 config/icon="res://icon.png"
+
+[locale]
+
+translations=PoolStringArray(  )
 
 [rendering]
 

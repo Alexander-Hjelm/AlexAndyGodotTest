@@ -89,11 +89,10 @@ surfaces/0 = {
 radius = 1.0
 height = 1.0
 
-[node name="Scene Root" type="Spatial" index="0"]
+[node name="Scene Root" type="Spatial"]
 
 [node name="RigidBody" type="RigidBody" parent="." index="0"]
 
-editor/display_folded = true
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
